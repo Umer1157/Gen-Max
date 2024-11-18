@@ -1,0 +1,203 @@
+<div class="bg-gray-100">
+  <div class="w-[80%] mx-auto py-8 px-4">
+    <div class="bg-gray-300 p-6 rounded-lg shadow-lg">
+      <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+        Create Booking
+      </h1>
+      <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+        {{ id }}
+      </h1>
+    </div>
+  </div>
+  <div class="flex items-center justify-center">
+    <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8 my-10">
+      <form
+        class="space-y-6"
+        [formGroup]="createBookingForm"
+        (submit)="submitBookingForm()"
+      >
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="eventName"
+            >Event Name</label
+          >
+          <input
+            type="text"
+            id="eventName"
+            name="eventName"
+            formControlName="eventName"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter event name"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="genSr"
+            >Generator Serial Number</label
+          >
+          <input
+            type="text"
+            id="genSr"
+            name="genSr"
+            formControlName="genSr"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter Generator Serial Number"
+          />
+        </div>
+
+        <div>
+          <label
+            class="block text-sm font-medium text-gray-600"
+            for="instalationType"
+            >Installation Type</label
+          >
+          <input
+            type="text"
+            id="instalationType"
+            name="instalationType"
+            formControlName="instalationType"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter installation type"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="jobNumber"
+            >Job Number</label
+          >
+          <input
+            type="text"
+            id="jobNumber"
+            name="jobNumber"
+            formControlName="jobNumber"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter job number"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="location"
+            >Location</label
+          >
+          <input
+            type="text"
+            id="location"
+            name="location"
+            formControlName="location"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter location"
+          />
+        </div>
+
+        <div>
+          <label
+            class="block text-sm font-medium text-gray-600"
+            for="mainClient"
+            >Main Client</label
+          >
+          <input
+            type="text"
+            id="mainClient"
+            name="mainClient"
+            formControlName="mainClient"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter main client"
+          />
+        </div>
+
+        <div>
+          <label
+            class="block text-sm font-medium text-gray-600"
+            for="numberOfDaysToHire"
+            >Number of Days to Hire</label
+          >
+          <input
+            type="number"
+            id="numberOfDaysToHire"
+            name="numberOfDaysToHire"
+            formControlName="numberOfDaysToHire"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter number of days"
+          />
+        </div>
+
+        <div>
+          <label
+            class="block text-sm font-medium text-gray-600"
+            for="projectNumber"
+            >Project Number</label
+          >
+          <input
+            type="text"
+            id="projectNumber"
+            name="projectNumber"
+            formControlName="projectNumber"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter project number"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="siteInfo"
+            >Site Info</label
+          >
+          <textarea
+            id="siteInfo"
+            name="siteInfo"
+            formControlName="siteInfo"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter site info"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="subClient"
+            >Sub Client</label
+          >
+          <input
+            type="text"
+            id="subClient"
+            name="subClient"
+            formControlName="subClient"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+            placeholder="Enter sub client"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="startDate"
+            >Start Date</label
+          >
+          <input
+            type="date"
+            id="startDate"
+            name="startDate"
+            formControlName="startDate"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600" for="endDate"
+            >End Date</label
+          >
+          <input
+            type="date"
+            id="endDate"
+            name="endDate"
+            formControlName="endDate"
+            class="w-full mt-1 p-2 border rounded-md focus:ring focus:ring-blue-200"
+          />
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="w-full text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

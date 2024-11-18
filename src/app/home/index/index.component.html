@@ -1,0 +1,76 @@
+<div class="container mx-auto pb-[102px]">
+  <div class="bg-gray-300 p-6 rounded-lg shadow-lg my-16">
+    <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+      Generators
+    </h1>
+  </div>
+  <div class="w-[40%] my-6 ml-auto">
+    <a
+      class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      routerLink="/avalability-form"
+    >
+      Check Avalable Generators
+    </a>
+  </div>
+  <div class="w-2/3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="min-w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-3">Capacity</th>
+          <th scope="col" class="px-6 py-3 text-center">No Of Generators</th>
+          <th scope="col" class="px-6 py-3 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let data of generatorData; let i = index">
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4">{{ data.capacity }}</td>
+          <td class="px-6 py-4 text-center">{{ data.generators.length }}</td>
+          <td class="px-6 py-4 text-center">
+            <button
+              class="text-blue-600 hover:underline"
+              (click)="toggleDropdown(data.capacity)"
+            >
+              Details
+            </button>
+          </td>
+        </tr>
+        <tr class="bg-gray-50" *ngIf="dropdownOpen[data.capacity]">
+          <td colspan="6" class="px-6 py-4">
+            <div class="dropdown-content">
+              <p><strong>Additional Details:</strong></p>
+              <table class="min-w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">Serial Number</th>
+                    <th scope="col" class="px-6 py-3 text-center">
+                      No Of Bookings
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let serials of data.generators; let i = index">
+                  <tr class="border-b">
+                    <td class="px-6 py-4">{{ serials.genSr }}</td>
+                    <td class="px-6 py-4 text-center">
+                      {{ serials.bookings.length }}
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                      <a
+                        [routerLink]="
+                          '/generator-detail/' + slugify(serials.genSr)
+                        "
+                        class="text-blue-600 hover:underline"
+                      >
+                        Details
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
